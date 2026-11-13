@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2 - Recent Searches</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Search Portal</h1>
+        <p class="subtitle">Type a search query.</p>
+
+        <div class="search-wrapper">
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Type to search..." autocomplete="off" />
+                <button id="search-btn" type="button">Search</button>
+            </div>
+            <!-- Dropdown for history -->
+            <ul id="history-dropdown" class="dropdown hidden"></ul>
+        </div>
+
+        <div id="search-result" class="result-box">
+            <p class="placeholder-text">Your search results will appear here...</p>
+        </div>
+    </main>
+
+    <script src="day-2.js"></script>
+</body>
+</html>
