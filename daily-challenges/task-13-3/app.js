@@ -3,7 +3,7 @@ const inputs = form.querySelectorAll("input, textarea");
 const successMsg = document.getElementById("success-msg");
 
 // Loop through each input to restore saved values and attach listeners
-inputs.forEach(input => {
+inputs.forEach((input) => {
     // 1. Load saved value on page load from sessionStorage
     const saved = sessionStorage.getItem(`form_${input.name}`);
     if (saved) {
@@ -21,7 +21,7 @@ inputs.forEach(input => {
 form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    inputs.forEach(input => {
+    inputs.forEach((input) => {
         sessionStorage.removeItem(`form_${input.name}`);
         input.value = ""; // Clear input fields
     });

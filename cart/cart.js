@@ -1,12 +1,13 @@
+/* eslint-disable no-unused-vars */
 const CART_STORAGE_KEY = "iyf_shopping_cart";
 
 const state = {
     products: [
         { id: 1, name: "Mandazi (pack of 6)", price: 120 },
         { id: 2, name: "Chapati (pack of 5)", price: 150 },
-        { id: 3, name: "Tea leaves 250g", price: 180 }
+        { id: 3, name: "Tea leaves 250g", price: 180 },
     ],
-    cart: [] // { productId, quantity }
+    cart: [], // { productId, quantity }
 };
 
 // --- Storage Helpers ---
@@ -27,7 +28,7 @@ function loadCart() {
 
 // --- State Actions ---
 function addToCart(productId) {
-    const existing = state.cart.find(item => item.productId === productId);
+    const existing = state.cart.find((item) => item.productId === productId);
 
     if (existing) {
         existing.quantity++;
@@ -46,7 +47,7 @@ function updateQuantity(productId, quantity) {
         return;
     }
 
-    const item = state.cart.find(i => i.productId === productId);
+    const item = state.cart.find((i) => i.productId === productId);
     if (item) {
         item.quantity = parsedQty;
         saveCart();
@@ -55,7 +56,7 @@ function updateQuantity(productId, quantity) {
 }
 
 function removeFromCart(productId) {
-    state.cart = state.cart.filter(item => item.productId !== productId);
+    state.cart = state.cart.filter((item) => item.productId !== productId);
     saveCart();
     renderAll();
 }
@@ -69,7 +70,7 @@ function clearCart() {
 // --- Calculated Values ---
 function getCartTotal() {
     return state.cart.reduce((total, item) => {
-        const product = state.products.find(p => p.id === item.productId);
+        const product = state.products.find((p) => p.id === item.productId);
         return total + (product ? product.price * item.quantity : 0);
     }, 0);
 }
@@ -87,7 +88,7 @@ const clearCartBtn = document.getElementById("clear-cart-btn");
 
 function renderProducts() {
     productListEl.innerHTML = "";
-    state.products.forEach(product => {
+    state.products.forEach((product) => {
         const card = document.createElement("div");
         card.className = "product-card";
         card.innerHTML = `
@@ -107,9 +108,11 @@ function renderCart() {
         return;
     }
 
-    state.cart.forEach(item => {
-        const product = state.products.find(p => p.id === item.productId);
-        if (!product) return;
+    state.cart.forEach((item) => {
+        const product = state.products.find((p) => p.id === item.productId);
+        if (!product) {
+            return;
+        }
 
         const itemEl = document.createElement("div");
         itemEl.className = "cart-item";

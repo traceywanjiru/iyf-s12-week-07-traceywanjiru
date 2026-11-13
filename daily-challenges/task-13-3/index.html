@@ -1,38 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Task 13.3 - Session Storage Form</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <main class="app-container">
-    <h1>Contact Form</h1>
-    <p class="subtitle">Please fill out the form below to get in touch with us.</p>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Task 13.3 - Session Storage Form</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <main class="app-container">
+            <h1>Contact Form</h1>
+            <p class="subtitle">Please fill out the form below to get in touch with us.</p>
 
-    <form id="contact-form">
-      <div class="form-group">
-        <label for="name">Your Name</label>
-        <input type="text" id="name" name="name" required autocomplete="name" />
-      </div>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required autocomplete="name" />
+                </div>
 
-      <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" required autocomplete="email" />
-      </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required autocomplete="email" />
+                </div>
 
-      <div class="form-group">
-        <label for="message">Your Message</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-      </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
 
-      <button type="submit">Send Message</button>
-    </form>
+                <button type="submit">Send Message</button>
+            </form>
 
-    <div id="success-msg" class="success-msg hidden">Message sent successfully! Session storage cleared.</div>
-  </main>
+            <div id="success-msg" class="success-msg hidden">
+                Message sent successfully! Session storage cleared.
+            </div>
+        </main>
 
-  <script src="app.js"></script>
-</body>
+        <script src="app.js"></script>
+    </body>
 </html>

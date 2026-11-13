@@ -1,0 +1,18 @@
+{
+  "name": "iyf-s12-week-07-traceywanjiru",
+  "version": "1.0.0",
+  "description": "Week 7 modular JS and toolings",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write \"**/*.{js,html,css}\"",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "eslint": "^9.0.0",
+    "globals": "^15.0.0",
+    "prettier": "^3.0.0"
+  }
+}

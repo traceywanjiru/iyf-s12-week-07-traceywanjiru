@@ -7,7 +7,9 @@ function saveToStorage(key, data) {
 
 function getFromStorage(key, defaultValue = null) {
     const data = localStorage.getItem(key);
-    if (data === null) return defaultValue;
+    if (data === null) {
+        return defaultValue;
+    }
     try {
         return JSON.parse(data);
     } catch {
@@ -15,12 +17,8 @@ function getFromStorage(key, defaultValue = null) {
     }
 }
 
-function removeFromStorage(key) {
-    localStorage.removeItem(key);
-}
-
 // --- App State ---
-let notes = getFromStorage(STORAGE_KEY, []);
+const notes = getFromStorage(STORAGE_KEY, []);
 
 // --- DOM Elements ---
 const form = document.getElementById("note-form");
@@ -74,7 +72,9 @@ function deleteNote(index) {
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     const text = input.value.trim();
-    if (!text) return;
+    if (!text) {
+        return;
+    }
 
     addNote(text);
     input.value = "";
