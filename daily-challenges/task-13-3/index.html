@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 13.3 - Session Storage Form</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-container">
+    <h1>Contact Form (Auto-Save)</h1>
+    <p class="subtitle">Type your message. If you accidentally close the tab, your text will still be here when you return!</p>
+
+    <form id="contact-form">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required autocomplete="name" />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required autocomplete="email" />
+      </div>
+
+      <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+      </div>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div id="success-msg" class="success-msg hidden">Message sent successfully! Session storage cleared.</div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
